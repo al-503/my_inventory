@@ -1,1 +1,25 @@
-ici index list
+<h2>ici index des lists</h2>
+
+<%= link_to "nouvelles List", new_list_path(@list), class:"btn btn-primary" %>
+
+<div class="Lists">
+
+  <% @lists.each do |r|%>
+
+    <%= link_to list_path(r), class:"link" do %>
+
+    <ul>
+      <li><%= r.name %></li>
+    <!--------------bouton supprimer------------------------->  
+      <%= link_to "",
+                  restaurant_path(r),
+                  method: :delete,
+                  data: { confirm: "Supprimer ?" }, class:"fas fa-trash-alt"%>
+
+    </ul>
+
+    <% end %>
+
+  <% end %>
+
+</div>
